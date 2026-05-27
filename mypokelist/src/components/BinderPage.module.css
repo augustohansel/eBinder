@@ -1,0 +1,349 @@
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--cream); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floatingSidebar {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  bottom: 24px;
+  width: 320px;
+  background-color: color-mix(in srgb, var(--surface) 85%, transparent);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--cream-border);
+  border-radius: 16px;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+  z-index: 50;
+}
+
+.backBtn {
+  background: var(--surface);
+  border: 1px solid var(--cream-border);
+  color: var(--ink);
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.backBtn:hover {
+  background: var(--cream);
+  transform: translateY(-2px);
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebarTitle {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+.sidebarLogo {
+  width: auto;
+  height: 24px; 
+  object-fit: contain;
+  opacity: 0.8;
+  margin-bottom: 4px; 
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--cream-border);
+}
+
+.sidebarSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebarLabel {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink-muted);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.statBox {
+  background: var(--cream);
+  border: 1px solid var(--cream-border);
+  border-radius: 8px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.statValue {
+  font-size: 1.4rem;
+  font-family: var(--serif);
+  font-weight: bold;
+  color: var(--ink);
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+.layoutOptions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.layoutBtn {
+  background-color: var(--cream);
+  border: 1px solid var(--cream-border);
+  color: var(--ink-muted);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.layoutBtn:hover {
+  background-color: var(--surface);
+  color: var(--ink);
+}
+
+.binderArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding-left: 360px; 
+  padding-right: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+.binderWrap {
+  display: flex;
+  height: 85vh;
+  max-height: 900px;
+  gap: 48px; 
+  background: transparent; 
+}
+
+.binder {
+  width: 35vw;
+  max-width: 540px;
+  min-width: 320px;
+  background-color: var(--surface);
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px; 
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2); 
+}
+
+.binderHeader {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--cream-border);
+}
+
+.binderTitle {
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.binderPage {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--ink-muted);
+}
+
+.grid {
+  flex: 1;
+  display: grid;
+  padding: 24px;
+  gap: 16px;
+  overflow-y: auto;
+  align-items: start; 
+}
+
+.sideNavBtn {
+  background: var(--surface);
+  border: 1px solid var(--cream-border);
+  color: var(--ink);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.sideNavBtn:hover:not(:disabled) {
+  background: var(--cream);
+  transform: scale(1.1);
+}
+
+.sideNavBtn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.sidebarContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.sidebarContent::-webkit-scrollbar { width: 4px; }
+.sidebarContent::-webkit-scrollbar-track { background: transparent; }
+.sidebarContent::-webkit-scrollbar-thumb { background: var(--cream-border); border-radius: 4px; }
+
+.statsRowWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.statsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.statsList::-webkit-scrollbar { width: 3px; }
+.statsList::-webkit-scrollbar-track { background: transparent; }
+.statsList::-webkit-scrollbar-thumb { background: var(--cream-border); border-radius: 3px; }
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--cream);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--cream-border);
+}
+
+.typeLabelGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.statTypeIcon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.statRowLabel {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+}
+
+.statRowValue {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--ink);
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 1px solid var(--cream-border);
+}
+
+.emptyStat {
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.addCardSidebarBtn {
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-shrink: 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3); 
+}
+
+.addCardSidebarBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  filter: brightness(1.1); 
+}
+
+.addCardSidebarBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}

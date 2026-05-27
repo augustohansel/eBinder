@@ -1,0 +1,117 @@
+.sidebar {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  bottom: 24px;
+  width: 360px;
+  /* 🔥 Adapta o vidro pro tema da aplicação 🔥 */
+  background-color: color-mix(in srgb, var(--surface) 85%, transparent); 
+  backdrop-filter: blur(16px); 
+  border: 1px solid var(--cream-border);
+  border-radius: 16px;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  z-index: 50;
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--cream);
+  border: 1px solid var(--cream-border);
+  color: var(--ink);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.closeBtn:hover { 
+  background: #ef4444; 
+  color: #fff;
+  border-color: #ef4444;
+}
+
+.loading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--ink-muted);
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--cream-border);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.error { padding: 32px; text-align: center; color: #ef4444; }
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content::-webkit-scrollbar { width: 6px; }
+.content::-webkit-scrollbar-track { background: transparent; }
+.content::-webkit-scrollbar-thumb { background: var(--cream-border); border-radius: 10px; }
+
+.header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.titleArea { display: flex; flex-direction: column; gap: 4px; }
+.name { margin: 0; font-size: 1.6rem; font-family: var(--serif); font-weight: bold; }
+.supertype { font-size: 0.8rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+.hpBox { display: flex; align-items: baseline; gap: 4px; color: var(--ink); }
+.hpLabel { font-size: 0.8rem; font-weight: bold; }
+.hpValue { font-size: 1.8rem; font-weight: bold; font-family: var(--serif); }
+
+.divider { height: 1px; background: var(--cream-border); }
+
+.section { display: flex; flex-direction: column; gap: 12px; }
+
+.infoRow { display: flex; justify-content: space-between; font-size: 0.9rem; }
+.label { color: var(--ink-muted); }
+.value { font-weight: 500; text-align: right; }
+
+.priceBox { background: var(--cream); border: 1px solid var(--cream-border); border-radius: 8px; padding: 12px; margin-top: 8px; }
+.priceTitle { display: block; font-size: 0.75rem; color: var(--ink-muted); text-transform: uppercase; margin-bottom: 8px; }
+.priceValues { display: flex; gap: 8px; flex-wrap: wrap; }
+.priceTag { background: var(--surface); border: 1px solid var(--cream-border); padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; color: var(--ink); }
+
+.attackBlock { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.attackHeader { display: flex; align-items: center; gap: 10px; }
+.costGrid { display: flex; gap: 2px; }
+.costIcon { width: 18px; height: 18px; }
+.attackName { font-weight: bold; font-size: 1.1rem; flex: 1; }
+.attackDamage { font-weight: bold; font-size: 1.2rem; font-family: var(--serif); }
+.abilityType { background: #ef4444; color: #fff; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase; }
+.attackText { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.4; margin: 0; }
+
+.flavorSection { padding: 12px; background: var(--cream); border-radius: 8px; border-left: 3px solid var(--ink-muted); }
+.flavorText { font-style: italic; font-size: 0.9rem; color: var(--ink-muted); margin: 0; line-height: 1.5; }

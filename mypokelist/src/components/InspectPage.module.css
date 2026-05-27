@@ -1,0 +1,66 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  background: var(--cream); /* Pega o fundo do seu tema */
+  color: var(--ink); /* Pega a fonte do seu tema */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Controles Flutuantes no topo da tela */
+.floatingControls {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  pointer-events: none; /* Deixa clicar apenas nos botões, não na div invisível */
+}
+
+.actionBtn, .deleteBtn {
+  pointer-events: auto; /* Reativa o clique para o botão */
+  background: var(--surface);
+  border: 1px solid var(--cream-border);
+  color: var(--ink);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.actionBtn:hover { background: var(--accent-soft, rgba(0,0,0,0.05)); }
+.deleteBtn { color: #ef4444; border-color: #fca5a5; }
+.deleteBtn:hover { background: #fef2f2; border-color: #ef4444; }
+
+/* Visualizador 3D no centro da tela */
+.viewerWrap {
+  flex: 1; /* Ocupa a tela toda */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Dica flutuante "Arraste para girar" */
+.hint {
+  position: absolute;
+  bottom: 40px;
+  background: var(--surface);
+  color: var(--ink-muted);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1px solid var(--cream-border);
+  pointer-events: none;
+}

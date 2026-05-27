@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500&display=swap');
+
+:root {
+  /* Brand (Tema Claro Padrão) */
+  --cream:        #faf7f2;
+  --cream-dark:   #f2ede4;
+  --cream-border: #e8e0d4;
+  --ink:          #1c1917;
+  --ink-muted:    #78716c;
+  --ink-faint:    #a8a29e;
+
+  /* Lilac scale */
+  --lilac-50:     #faf5ff;
+  --lilac-100:    #f3e8ff;
+  --lilac-200:    #e9d5ff;
+  --lilac-300:    #d8b4fe;
+  --lilac-400:    #c084fc;
+  --lilac-500:    #a855f7;
+  --lilac-600:    #9333ea;
+  --lilac-700:    #7e22ce;
+
+  /* Accent warm */
+  --gold:         #d4a85a;
+  --gold-light:   #f5e6c8;
+
+  /* Fonts */
+  --serif:  'Fraunces', Georgia, serif;
+  --sans:   'Outfit', system-ui, sans-serif;
+
+  /* Radius */
+  --r-sm:   8px;
+  --r-md:   14px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+
+  /* Shadows (Light) */
+  --shadow-xs: 0 1px 3px rgba(28,25,23,0.07);
+  --shadow-sm: 0 2px 8px rgba(28,25,23,0.08), 0 1px 3px rgba(28,25,23,0.06);
+  --shadow-md: 0 6px 24px rgba(28,25,23,0.1),  0 2px 8px rgba(28,25,23,0.06);
+  --shadow-lg: 0 20px 60px rgba(28,25,23,0.13), 0 8px 20px rgba(28,25,23,0.08);
+  --shadow-card: 0 4px 16px rgba(168,85,247,0.12), 0 2px 6px rgba(28,25,23,0.08);
+  --surface: #ffffff; /* Fundo de cards e binders no tema claro */
+}
+
+:root[data-theme='dark'] {
+  /* Inversão dos Fundos */
+  --cream:        #0f0f13; 
+  --cream-dark:   #1e1e24; 
+  --cream-border: #374151; 
+  --surface:      #1e1e24; /* O branco vira chumbo escuro */
+  
+  /* Inversão dos Textos */
+  --ink:          #f9fafb; 
+  --ink-muted:    #9ca3af; 
+  --ink-faint:    #6b7280; 
+
+  /* Ajuste fino na paleta Lilac para não ofuscar no escuro */
+  --lilac-50:     #1a1625; 
+  --lilac-100:    #2d2446;
+  --lilac-200:    #4c1d95;
+
+  /* Sombras mais densas para o Dark Mode */
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 6px 24px rgba(0,0,0,0.6),  0 2px 8px rgba(0,0,0,0.4);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.7), 0 8px 20px rgba(0,0,0,0.5);
+  --shadow-card: 0 4px 16px rgba(168,85,247,0.2), 0 2px 6px rgba(0,0,0,0.5);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  background: var(--cream);
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  /* Transição suave de 0.3s quando trocar de tema! */
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+button { font-family: var(--sans); cursor: pointer; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--lilac-300); border-radius: 4px; }
