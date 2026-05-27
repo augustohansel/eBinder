@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String       @id @default(uuid())
+  username    String       @unique
+  email       String       @unique
+  collections Collection[] // Relação: Um usuário tem várias coleções
+  createdAt   DateTime     @default(now())
+}
+
+model Collection {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  icon        String
+  accent      String
+  rows        Int      @default(3) // Novo: linhas do binder
+  cols        Int      @default(3) // Novo: colunas do binder
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  cards       Card[]
+  createdAt   DateTime @default(now())
+}
+
+model Card {
+  id            String     @id @default(uuid())
+  pokemonCardId String
+  name          String
+  type          String
+  rarity        String
+  frontImage    String
+  cardBack      String     @default("pokemon") // Novo: Verso da carta
+  position      Int
+  collectionId  String
+  collection    Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  createdAt     DateTime   @default(now())
+}
